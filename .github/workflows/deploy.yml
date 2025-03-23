@@ -42,4 +42,5 @@ jobs:
         run: |        
           echo "..."
       - name: checking the env variable
-        run: echo "MONGODB_NAME is : $MONGO_DB_DB_NAME "
+        run: |
+          echo "MONGODB_NAME is : $MONGO_DB_DB_NAME "
