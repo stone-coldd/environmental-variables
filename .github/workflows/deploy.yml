@@ -28,9 +28,11 @@ jobs:
         run: npm ci
       - name: checking the port env variable
         run: |
-         echo "Port number is : $PORT "
-      - name: Run server
-        run: npm start & npx wait-on http://127.0.0.1:$PORT
+         echo "Port number is : $PORT " 
+         echo "Port number is : ${{ env.PORT }} " 
+        #instead of $PORT, we can also use expression as ${{ env.PORT }}
+      #- name: Run server
+      #  run: npm start & npx wait-on http://127.0.0.1:$PORT
       - name: Run tests
         run: npm test
       - name: Output information
